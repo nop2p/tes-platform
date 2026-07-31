@@ -85,6 +85,13 @@ export function analyzeExamResult(
       );
     }).length;
 
+  // ข้อที่ไม่ยืนยันคำตอบก่อนหมดเวลา ไม่ถือว่าตอบผิด
+  const unansweredAnswers =
+    sessionQuestions.filter((question) => {
+      const answer = answerMap.get(question.id);
+      return answer?.isConfirmed !== true;
+    }).length;
+
   const percentage =
     totalQuestions > 0
       ? Math.round(
@@ -180,6 +187,12 @@ export function analyzeExamResult(
             },
           ).length;
 
+        const topicUnansweredAnswers =
+          topicQuestions.filter((question) => {
+            const answer = answerMap.get(question.id);
+            return answer?.isConfirmed !== true;
+          }).length;
+
         const topicPercentage =
           topicTotalQuestions > 0
             ? Math.round(
@@ -206,6 +219,9 @@ export function analyzeExamResult(
 
           incorrectAnswers:
             topicIncorrectAnswers,
+
+          unansweredAnswers:
+            topicUnansweredAnswers,
 
           confirmedAnswers:
             topicConfirmedAnswers,
@@ -236,6 +252,8 @@ export function analyzeExamResult(
     correctAnswers,
 
     incorrectAnswers,
+
+    unansweredAnswers,
 
     percentage,
 

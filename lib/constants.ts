@@ -1,5 +1,6 @@
 export const SUBJECT_IDS = {
   TEACHER_LICENSE: "teacher-license",
+  RESEARCH01: "research-1",
 } as const;
 
 export const TOPIC_IDS = {
@@ -7,6 +8,7 @@ export const TOPIC_IDS = {
   PLC: "plc",
   CURRICULUM: "curriculum",
   EDUCATIONAL_PSYCHOLOGY: "educational-psychology",
+  RESEARCH01: "research-01",
 } as const;
 
 export const QUESTION_STATUS = {

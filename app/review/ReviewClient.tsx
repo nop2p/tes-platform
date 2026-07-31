@@ -43,7 +43,11 @@ export function ReviewClient() {
     setCurrentQuestionIndex,
   ] = useState(0);
 
-  type ReviewFilter = "all" | "correct" | "wrong";
+  type ReviewFilter =
+    | "all"
+    | "correct"
+    | "wrong"
+    | "unanswered";
 
   const [reviewFilter, setReviewFilter] =
     useState<ReviewFilter>("all");
@@ -232,6 +236,9 @@ export function ReviewClient() {
   const isCorrect =
     currentAnswer?.isCorrect === true;
 
+  const isUnanswered =
+    currentAnswer?.isConfirmed !== true;
+
 /*
  * -------------------------
  * Package 2.13 - Part 8.5C
@@ -260,12 +267,20 @@ const filteredQuestionIndexes =
       );
       const questionIsCorrect =
         answer?.isCorrect === true;
+      const questionIsUnanswered =
+        answer?.isConfirmed !== true;
 
       if (reviewFilter === "correct") {
         return questionIsCorrect ? index : null;
       }
       if (reviewFilter === "wrong") {
-        return !questionIsCorrect ? index : null;
+        return answer?.isConfirmed === true &&
+          !questionIsCorrect
+          ? index
+          : null;
+      }
+      if (reviewFilter === "unanswered") {
+        return questionIsUnanswered ? index : null;
       }
       return index;
     })
@@ -319,9 +334,17 @@ const filteredQuestionIndexes =
           (item) => item.questionId === questionId,
         );
         const correct = answer?.isCorrect === true;
+        const unanswered = answer?.isConfirmed !== true;
 
         if (nextFilter === "correct") return correct ? index : null;
-        if (nextFilter === "wrong") return !correct ? index : null;
+        if (nextFilter === "wrong") {
+          return answer?.isConfirmed === true && !correct
+            ? index
+            : null;
+        }
+        if (nextFilter === "unanswered") {
+          return unanswered ? index : null;
+        }
         return index;
       })
       .filter((index): index is number => index !== null);
@@ -381,7 +404,7 @@ function handleSelectQuestion(
         </div>
         
    {/* Review Summary / Filter */}
-        <div className="mb-6 grid grid-cols-3 gap-3">
+        <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <button
             type="button"
             onClick={() => handleReviewFilterChange("all")}
@@ -426,6 +449,25 @@ function handleSelectQuestion(
             <p className="mt-1 text-2xl font-bold text-red-700">{analysis.incorrectAnswers}</p>
             <p className="mt-1 text-xs text-red-600">ข้อ</p>
           </button>
+
+          <button
+            type="button"
+            onClick={() => handleReviewFilterChange("unanswered")}
+            aria-pressed={reviewFilter === "unanswered"}
+            className={`rounded-2xl border p-4 text-center transition ${
+              reviewFilter === "unanswered"
+                ? "border-amber-500 bg-amber-100 ring-2 ring-amber-100"
+                : "border-amber-200 bg-amber-50 hover:bg-amber-100"
+            }`}
+          >
+            <p className="text-sm font-medium text-amber-700">
+              ไม่ทำข้อสอบ
+            </p>
+            <p className="mt-1 text-2xl font-bold text-amber-700">
+              {analysis.unansweredAnswers}
+            </p>
+            <p className="mt-1 text-xs text-amber-600">ข้อ</p>
+          </button>
         </div>
 
         {/* Question Navigator */}
@@ -447,6 +489,8 @@ function handleSelectQuestion(
                   ? "ไม่มีข้อที่ตอบถูก"
                   : reviewFilter === "wrong"
                     ? "ไม่มีข้อที่ตอบผิด"
+                    : reviewFilter === "unanswered"
+                      ? "ไม่มีข้อที่ไม่ได้ทำ"
                     : "ไม่มีข้อสำหรับตรวจสอบ"}
               </p>
 
@@ -475,10 +519,16 @@ function handleSelectQuestion(
                   const questionIsCorrect =
                     answer?.isCorrect === true;
 
+                  const questionIsUnanswered =
+                    answer?.isConfirmed !== true;
+
                   let buttonClassName =
                     "border-slate-300 bg-white text-slate-600 hover:bg-slate-50";
 
-                  if (questionIsCorrect) {
+                  if (questionIsUnanswered) {
+                    buttonClassName =
+                      "border-amber-300 bg-amber-50 text-amber-700 hover:bg-amber-100";
+                  } else if (questionIsCorrect) {
                     buttonClassName =
                       "border-green-300 bg-green-50 text-green-700 hover:bg-green-100";
                   } else {
@@ -525,6 +575,11 @@ function handleSelectQuestion(
             <span className="flex items-center gap-2 text-red-700">
               <span className="h-3 w-3 rounded-full bg-red-500" />
               ตอบผิด
+            </span>
+
+            <span className="flex items-center gap-2 text-amber-700">
+              <span className="h-3 w-3 rounded-full bg-amber-500" />
+              ไม่ทำข้อสอบ
             </span>
 
             <span className="flex items-center gap-2 text-blue-700">
@@ -655,38 +710,48 @@ function handleSelectQuestion(
         {/* Result */}
         <div
           className={`mt-5 rounded-2xl border p-6 ${
-            isCorrect
-              ? "border-green-300 bg-green-50"
-              : "border-red-300 bg-red-50"
+            isUnanswered
+              ? "border-amber-300 bg-amber-50"
+              : isCorrect
+                ? "border-green-300 bg-green-50"
+                : "border-red-300 bg-red-50"
           }`}
         >
           <div className="flex items-center gap-3">
 
             <div
               className={`flex h-10 w-10 items-center justify-center rounded-full text-xl font-bold ${
-                isCorrect
-                  ? "bg-green-100 text-green-700"
-                  : "bg-red-100 text-red-700"
+                isUnanswered
+                  ? "bg-amber-100 text-amber-700"
+                  : isCorrect
+                    ? "bg-green-100 text-green-700"
+                    : "bg-red-100 text-red-700"
               }`}
             >
-              {isCorrect ? "✓" : "×"}
+              {isUnanswered ? "–" : isCorrect ? "✓" : "×"}
             </div>
 
             <div>
               <p
                 className={`font-bold ${
-                  isCorrect
+                isUnanswered
+                  ? "text-amber-800"
+                  : isCorrect
                     ? "text-green-800"
                     : "text-red-800"
-                }`}
-              >
-                {isCorrect
-                  ? "ตอบถูก"
-                  : "ตอบไม่ถูก"}
+              }`}
+            >
+                {isUnanswered
+                  ? "ไม่ทำข้อสอบ (หมดเวลา)"
+                  : isCorrect
+                    ? "ตอบถูก"
+                    : "ตอบผิด"}
               </p>
 
               <p className="mt-1 text-sm text-slate-600">
-                คำตอบนี้ถูกล็อกแล้วและไม่สามารถแก้ไขได้
+                {isUnanswered
+                  ? "ข้อนี้ไม่ได้ยืนยันคำตอบก่อนเวลาสอบหมด"
+                  : "คำตอบนี้ถูกล็อกแล้วและไม่สามารถแก้ไขได้"}
               </p>
             </div>
 

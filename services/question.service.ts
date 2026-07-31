@@ -6,7 +6,7 @@ import { Question } from "@/types";
  * คืนข้อสอบทั้งหมด
  */
 export function getQuestions(): Question[] {
-  return questions;
+  return [...questions];
 }
 
 /**

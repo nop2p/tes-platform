@@ -13,6 +13,7 @@ export function TopicResultCard({
     totalQuestions,
     correctAnswers,
     incorrectAnswers,
+    unansweredAnswers,
     percentage,
   } = result;
 
@@ -65,6 +66,10 @@ export function TopicResultCard({
 
         <span className="text-red-600">
           ผิด {incorrectAnswers}
+        </span>
+
+        <span className="text-amber-600">
+          ไม่ทำ {unansweredAnswers}
         </span>
 
         <span className="text-slate-500">

@@ -36,4 +36,12 @@ export const topics: Topic[] = [
   order: 4,
   isActive: true,
 },
+{
+  id: TOPIC_IDS.RESEARCH01,
+  subjectId: SUBJECT_IDS.RESEARCH01,
+  code: "R01",
+  name: "วิจัยทางการศึกษา #1",
+  order: 1,
+  isActive: true,
+},
 ];

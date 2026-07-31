@@ -1,5 +1,6 @@
 export const EXAM_CONFIG = {
-  defaultDurationMinutes: 180,
+  // ทุกวิชาใช้เวลาเท่ากัน 30 นาที
+  defaultDurationMinutes: 30,
 
   passingScore: 60,
 

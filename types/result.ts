@@ -37,6 +37,9 @@ export interface TopicResult {
    */
   incorrectAnswers: number;
 
+  /** จำนวนข้อที่ไม่ได้ยืนยันคำตอบก่อนเวลาสอบหมด */
+  unansweredAnswers: number;
+
   /**
    * จำนวนข้อที่ยืนยันคำตอบแล้ว
    */
@@ -87,6 +90,9 @@ export interface ExamAnalysisResult {
    * จำนวนข้อที่ตอบผิด
    */
   incorrectAnswers: number;
+
+  /** จำนวนข้อที่ไม่ได้ยืนยันคำตอบก่อนเวลาสอบหมด */
+  unansweredAnswers: number;
 
   /**
    * คะแนนรวมเป็นเปอร์เซ็นต์

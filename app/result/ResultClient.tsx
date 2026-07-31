@@ -277,6 +277,16 @@ export function ResultClient() {
 
             <div className="flex items-center justify-between p-4">
               <span className="text-slate-500">
+                ไม่ทำข้อสอบ (หมดเวลา)
+              </span>
+
+              <span className="font-medium text-amber-600">
+                {analysis.unansweredAnswers}
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between p-4">
+              <span className="text-slate-500">
                 สถานะ
               </span>
 

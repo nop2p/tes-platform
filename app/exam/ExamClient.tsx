@@ -132,10 +132,6 @@ const isFinishingRef =
     questions,
     {
       ...subject.examConfig,
-      durationMinutes: 45,
-       /*
-          durationMinutes: 0.5,
-          */
     },
   );
 
