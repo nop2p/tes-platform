@@ -288,6 +288,15 @@ const filteredQuestionIndexes =
       (index): index is number => index !== null,
     );
 
+  // เมื่อเลือกตัวกรอง "ไม่ทำข้อสอบ" แต่ไม่มีข้อในรายการ
+  // ห้ามแสดงรายละเอียดของข้อที่ผู้ใช้เคยเปิดดูก่อนหน้า
+  const hasNoUnansweredQuestions =
+    reviewFilter === "unanswered" &&
+    filteredQuestionIndexes.length === 0;
+
+  const shouldHideQuestionDetails =
+    isUnanswered || hasNoUnansweredQuestions;
+
   /*
    * -------------------------
    * Package 2.11 - Part 3
@@ -591,7 +600,7 @@ function handleSelectQuestion(
 
         {/* Question Card */}
         {/* Question Card */}
-        {!isUnanswered && (
+        {!shouldHideQuestionDetails && (
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
 
           {/* Question Number */}
@@ -710,6 +719,8 @@ function handleSelectQuestion(
         )}
 
         {/* Result */}
+        {!hasNoUnansweredQuestions && (
+        <>
         <div
           className={`mt-5 rounded-2xl border p-6 ${
             isUnanswered
@@ -761,7 +772,7 @@ function handleSelectQuestion(
         </div>
 
         {/* Explanation */}
-        {!isUnanswered && (
+        {!shouldHideQuestionDetails && (
         <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
 
           <h2 className="text-lg font-bold text-slate-900">
@@ -845,6 +856,9 @@ function handleSelectQuestion(
           </Link>
 
         </div>
+
+        </>
+        )}
 
         {/* Session */}
         <div className="mt-5 text-center text-xs text-slate-400">
