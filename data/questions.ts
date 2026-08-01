@@ -1,5 +1,6 @@
 import { questions as question01 } from "./question01";
 import { questions as question02 } from "./question02";
+import { questions as question03 } from "./question03";
 import type { Question } from "@/types";
 
 /**
@@ -9,6 +10,7 @@ import type { Question } from "@/types";
  * ดูขั้นตอนและตัวอย่างใน README.md
  */
 export const questions = [
-  ...question01,
-    ...question02,
+...question01,
+...question02,
+...question03,
 ] satisfies Question[];

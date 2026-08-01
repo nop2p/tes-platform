@@ -591,6 +591,7 @@ function handleSelectQuestion(
 
         {/* Question Card */}
         {/* Question Card */}
+        {!isUnanswered && (
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
 
           {/* Question Number */}
@@ -706,6 +707,7 @@ function handleSelectQuestion(
           </div>
 
         </div>
+        )}
 
         {/* Result */}
         <div
@@ -759,6 +761,7 @@ function handleSelectQuestion(
         </div>
 
         {/* Explanation */}
+        {!isUnanswered && (
         <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
 
           <h2 className="text-lg font-bold text-slate-900">
@@ -799,6 +802,7 @@ function handleSelectQuestion(
           </div>
 
         </div>
+        )}
 
         {/* Review Navigation */}
         <div className="mt-6">

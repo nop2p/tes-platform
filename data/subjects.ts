@@ -31,4 +31,20 @@ export const subjects: Subject[] = [
 
     isActive: true,
   },
+  
+    {
+    id: SUBJECT_IDS.EducationDisabilities001,
+    code: "003",
+    name: "พรบ. การจัดการศึกษาสำหรับคนพิการ พ.ศ. 2551 , 2556",
+    description: "ข้อสอบครูผู้ช่วย",
+
+    examConfig: {
+      subjectId: SUBJECT_IDS.EducationDisabilities001,
+      totalQuestions: 0,
+      durationMinutes: 1,
+    },
+
+    isActive: true,
+  },
+  
 ];

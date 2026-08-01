@@ -44,4 +44,14 @@ export const topics: Topic[] = [
   order: 1,
   isActive: true,
 },
+
+{
+  id: TOPIC_IDS.EDisabilities001,
+  subjectId: SUBJECT_IDS.EducationDisabilities001,
+  code: "ED01",
+  name: "พรบ. การจัดการศึกษาสำหรับคนพิการ พ.ศ. 2551 , 2556",
+  order: 1,
+  isActive: true,
+},
+
 ];
