@@ -41,7 +41,7 @@ export const subjects: Subject[] = [
     examConfig: {
       subjectId: SUBJECT_IDS.EducationDisabilities001,
       totalQuestions: 0,
-      durationMinutes: 1,
+      durationMinutes: 25,
     },
 
     isActive: true,
