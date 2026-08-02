@@ -39,7 +39,7 @@ export const subjects: Subject[] = [
     examConfig: {
       subjectId: SUBJECT_IDS.EducationDisabilities001,
       totalQuestions: 0,
-      durationMinutes: 25,
+      durationMinutes: 45,
     },
     isActive: true,
   },
@@ -53,7 +53,7 @@ export const subjects: Subject[] = [
     examConfig: {
       subjectId: SUBJECT_IDS.ETHICS001,
       totalQuestions: 0,
-      durationMinutes: 30,
+      durationMinutes: 45,
     },
     isActive: true,
   },
