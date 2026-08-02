@@ -54,4 +54,12 @@ export const topics: Topic[] = [
   isActive: true,
 },
 
+{
+  id: TOPIC_IDS.EDethics01,
+  subjectId: SUBJECT_IDS.ETHICS001,
+  code: "ETH01",
+  name: "ข้าราชการที่ดี ประมวลจริยธรรม 2562 #1",
+  order: 1,
+  isActive: true,
+},
 ];

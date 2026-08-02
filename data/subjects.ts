@@ -13,7 +13,6 @@ export const subjects: Subject[] = [
       totalQuestions: 0,
       durationMinutes: 30,
     },
-
     isActive: true,
   },
   
@@ -28,7 +27,6 @@ export const subjects: Subject[] = [
       totalQuestions: 0,
       durationMinutes: 60,
     },
-
     isActive: true,
   },
   
@@ -43,8 +41,20 @@ export const subjects: Subject[] = [
       totalQuestions: 0,
       durationMinutes: 25,
     },
-
     isActive: true,
   },
   
+  {
+    id: SUBJECT_IDS.ETHICS001,
+    code: "004",
+    name: "ข้าราชการที่ดี ประมวลจริยธรรม 2562",
+    description: "ข้อสอบครูผู้ช่วย",
+
+    examConfig: {
+      subjectId: SUBJECT_IDS.ETHICS001,
+      totalQuestions: 0,
+      durationMinutes: 30,
+    },
+    isActive: true,
+  },
 ];
