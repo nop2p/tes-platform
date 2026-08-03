@@ -62,4 +62,14 @@ export const topics: Topic[] = [
   order: 1,
   isActive: true,
 },
+
+{
+  id: TOPIC_IDS.EDeducations01,
+  subjectId: SUBJECT_IDS.EDUCTIONS01,
+  code: "EDU01",
+  name: "ภาค ข การศึกษา ว16/2569 #1",
+  order: 1,
+  isActive: true,
+},
+
 ];

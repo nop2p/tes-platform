@@ -57,4 +57,19 @@ export const subjects: Subject[] = [
     },
     isActive: true,
   },
+  
+    {
+    id: SUBJECT_IDS.EDUCTIONS01,
+    code: "005",
+    name: "ภาค ข การศึกษา ว16/2569 #1",
+    description: "ข้อสอบครูผู้ช่วย",
+
+    examConfig: {
+      subjectId: SUBJECT_IDS.EDUCTIONS01,
+      totalQuestions: 0,
+      durationMinutes: 90,
+    },
+    isActive: true,
+  },
+  
 ];
