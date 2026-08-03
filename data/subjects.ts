@@ -5,7 +5,7 @@ export const subjects: Subject[] = [
   {
     id: SUBJECT_IDS.TEACHER_LICENSE,
     code: "001",
-    name: "ระเบียบบริหารสถานศึกษา 2569",
+    name: "ระเบียบบริหารสถานศึกษา 2569 #1",
     description: "ข้อสอบครูผู้ช่วย",
 
     examConfig: {
@@ -72,4 +72,17 @@ export const subjects: Subject[] = [
     isActive: true,
   },
   
+      {
+    id: SUBJECT_IDS.VOCATIONNAL01,
+    code: "006",
+    name: "ระเบียบบริหารสถานศึกษา 2569 #2",
+    description: "ข้อสอบครูผู้ช่วย",
+
+    examConfig: {
+      subjectId: SUBJECT_IDS.VOCATIONNAL01,
+      totalQuestions: 0,
+      durationMinutes: 20,
+    },
+    isActive: true,
+  },
 ];

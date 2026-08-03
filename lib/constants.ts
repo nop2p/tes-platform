@@ -5,6 +5,7 @@ RESEARCH01: "research-1",
 EducationDisabilities001: "ED-disabilities001",
 ETHICS001:"ED-ethics001",
 EDUCTIONS01:"ED-education001",
+VOCATIONNAL01:"ED-vocation001",
 } as const;
 
 export const TOPIC_IDS = {
@@ -16,6 +17,7 @@ export const TOPIC_IDS = {
    EDisabilities001: "disabilities001-01",
    EDethics01:"ethics001-01",
    EDeducations01:"education001-01",
+   EDVocational01:"edvocation001-01",
 } as const;
 
 export const QUESTION_STATUS = {
