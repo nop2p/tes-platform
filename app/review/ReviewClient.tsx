@@ -288,14 +288,14 @@ const filteredQuestionIndexes =
       (index): index is number => index !== null,
     );
 
-  // เมื่อเลือกตัวกรอง "ไม่ทำข้อสอบ" แต่ไม่มีข้อในรายการ
+  // เมื่อตัวกรองที่เลือกไม่มีข้อในรายการ
   // ห้ามแสดงรายละเอียดของข้อที่ผู้ใช้เคยเปิดดูก่อนหน้า
-  const hasNoUnansweredQuestions =
-    reviewFilter === "unanswered" &&
+  const hasEmptyReviewFilter =
+    reviewFilter !== "all" &&
     filteredQuestionIndexes.length === 0;
 
   const shouldHideQuestionDetails =
-    isUnanswered || hasNoUnansweredQuestions;
+    isUnanswered || hasEmptyReviewFilter;
 
   /*
    * -------------------------
@@ -719,7 +719,7 @@ function handleSelectQuestion(
         )}
 
         {/* Result */}
-        {!hasNoUnansweredQuestions && (
+        {!hasEmptyReviewFilter && (
         <>
         <div
           className={`mt-5 rounded-2xl border p-6 ${
