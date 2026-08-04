@@ -281,14 +281,14 @@ export const questions: Question[] = [
  order: 13,
  question: "คุณลักษณะที่เกิดขึ้นบริเวณรอยต่อ PN (PN Junction) ของทรานซิสเตอร์ในสภาวะสมดุลคือข้อใด",
  choices: [
- { id: CHOICE_IDS.A, text: "บริเวณรวมพาหะส่วนมาก (Majority Carrier Layer) ที่ไม่มีแรงดันไฟฟ้า" },
- { id: CHOICE_IDS.B, text: "บริเวณความพร่อง (Depletion Region) ที่เกิดจากไอออนบวกและไอออนลบ" },
+ { id: CHOICE_IDS.A, text: "บริเวณรวมพาหะข้างมาาก (Majority Carrier Layer) ที่ไม่มีแรงดันไฟฟ้า" },
+ { id: CHOICE_IDS.B, text: "บริเวณปลอดพาหะ (Depletion Region) ที่เกิดจากไอออนบวกและไอออนลบ" },
  { id: CHOICE_IDS.C, text: "บริเวณความต้านทานเป็นศูนย์ (Zero Resistance Region) ที่ยอมให้กระแสผ่านได้อิสระ" },
  { id: CHOICE_IDS.D, text: "บริเวณพังทลายแบบอวาลานช์ (Avalanche Breakdown Region) ในสภาวะปกติ" },
  ],
  answer: CHOICE_IDS.B,
  explanation: {
- text: "เมื่อสาร P และ N ต่อชนกัน โฮลและอิเล็กตรอนอิสระจะแพร่ข้ามรอยต่อเข้าหากันและรวมตัวกัน (Recombination) ทำให้บริเวณรอยต่อสูญเสียพาหะอิสระ เกิดเป็น \"บริเวณความพร่อง\" (Depletion Region) ซึ่งตรึงไว้ด้วยไอออนบวกฝั่ง N และไอออนลบฝั่ง P ส่งผลให้เกิดแรงดันต่างระดับอุปสรรค (Barrier Potential) ต้านการแพร่ต่อ",
+ text: "เมื่อสาร P และ N ต่อชนกัน โฮลและอิเล็กตรอนอิสระจะแพร่ข้ามรอยต่อเข้าหากันและรวมตัวกัน (Recombination) ทำให้บริเวณรอยต่อสูญเสียพาหะอิสระ เกิดเป็น \"บริเวณปลอดพาหะ\" (Depletion Region) ซึ่งตรึงไว้ด้วยไอออนบวกฝั่ง N และไอออนลบฝั่ง P ส่งผลให้เกิดศักย์กั้น (Barrier Potential) ต้านการแพร่ต่อ",
  },
  difficulty: DIFFICULTY.EASY,
  tags: ["วิชาเอกไฟฟ้า 2569", "ดิจิทัล", "อิเล็กทรอนิกส์"],
@@ -411,12 +411,12 @@ export const questions: Question[] = [
  subjectId: SUBJECT_IDS.DigitalElec01,
  topicId: TOPIC_IDS.EDDigitalElectonic01,
  order: 19,
- question: "ข้อใดกล่าวถูกต้องเกี่ยวกับโครงสร้างทางกายภาพและการโดปสารมลทินของ \"ขาเบส (Base)\" ในทรานซิสเตอร์ชนิด BJT",
+ question: "ข้อใดกล่าวถูกต้องเกี่ยวกับโครงสร้างทางกายภาพและการโดปสารเจือปนของ \"ขาเบส (Base)\" ในทรานซิสเตอร์ชนิด BJT",
  choices: [
- { id: CHOICE_IDS.A, text: "มีพื้นที่กว้างที่สุดและโดปสารมลทินเข้มข้นที่สุด" },
- { id: CHOICE_IDS.B, text: "มีพื้นที่แคบที่สุดและโดปสารมลทินเบาบางที่สุด" },
- { id: CHOICE_IDS.C, text: "มีพื้นที่กว้างที่สุดแต่โดปสารมลทินเบาบางที่สุด" },
- { id: CHOICE_IDS.D, text: "มีพื้นที่แคบที่สุดแต่โดปสารมลทินเข้มข้นที่สุด" },
+ { id: CHOICE_IDS.A, text: "มีพื้นที่กว้างที่สุดและโดปสารเจือปนเข้มข้นที่สุด" },
+ { id: CHOICE_IDS.B, text: "มีพื้นที่แคบที่สุดและโดปสารเจือปนเบาบางที่สุด" },
+ { id: CHOICE_IDS.C, text: "มีพื้นที่กว้างที่สุดแต่โดปสารเจือปนเบาบางที่สุด" },
+ { id: CHOICE_IDS.D, text: "มีพื้นที่แคบที่สุดแต่โดปสารเจือปนเข้มข้นที่สุด" },
  ],
  answer: CHOICE_IDS.B,
  explanation: {
@@ -565,7 +565,7 @@ export const questions: Question[] = [
  subjectId: SUBJECT_IDS.DigitalElec01,
  topicId: TOPIC_IDS.EDDigitalElectonic01,
  order: 26,
- question: "ในการผลิตทรานซิสเตอร์ชนิด BJT หากเรียงลำดับความเข้มข้นของการโดปสารมลทิน (Doping Concentration) จากมากที่สุดไปหาน้อยที่สุด ข้อใดกล่าวถูกต้อง",
+ question: "ในการผลิตทรานซิสเตอร์ชนิด BJT หากเรียงลำดับความเข้มข้นของการโดปสารเจือปน (Doping Concentration) จากมากที่สุดไปหาน้อยที่สุด ข้อใดกล่าวถูกต้อง",
  choices: [
  { id: CHOICE_IDS.A, text: "Collector > Base > Emitter" },
  { id: CHOICE_IDS.B, text: "Emitter > Collector > Base" },
@@ -574,7 +574,7 @@ export const questions: Question[] = [
  ],
  answer: CHOICE_IDS.B,
  explanation: {
- text: "Emitter (ขาเอมิตเตอร์): มีความเข้มข้นของการโดปสารมลทินสูงที่สุด (Heavily Doped: ≈ 10¹⁹ atoms/cm³) เพื่อทำหน้าที่ฉีดพาหะส่วนมาก (Majority Carriers) เข้าสู่ฐานในปริมาณที่มากที่สุดเท่าที่จะเป็นไปได้\nCollector (ขาคอลเลกเตอร์): มีความเข้มข้นของการโดปสารมลทินปานกลาง (Moderately Doped: ≈ 10¹⁵ - 10¹⁷ atoms/cm³) โดปสารน้อยกว่า Emitter เพื่อให้สามารถทนแรงดันไบอัสย้อนกลับ (Reverse Bias) ได้สูงขึ้น โดยไม่เกิดการพังทลาย (Breakdown) ง่ายเกินไป\nBase (ขาเบส): มีความเข้มข้นของการโดปสารมลทินเบาบางที่สุด (Lightly Doped: ≈ 10¹³ - 10¹⁵ atoms/cm³) เพื่อลดโอกาสการรวมตัวกัน (Recombination) ของพาหะขณะเคลื่อนที่ผ่านชั้นเบส ส่งผลให้พาหะส่วนใหญ่ข้ามไปถึง Collector ได้เกือบทั้งหมด (I_C ≈ I_E)",
+ text: "Emitter (ขาเอมิตเตอร์): มีความเข้มข้นของการโดปสารเจือปนสูงที่สุด (Heavily Doped: ≈ 10¹⁹ atoms/cm³) เพื่อทำหน้าที่ฉีดพาหะส่วนมาก (Majority Carriers) เข้าสู่ฐานในปริมาณที่มากที่สุดเท่าที่จะเป็นไปได้\nCollector (ขาคอลเลกเตอร์): มีความเข้มข้นของการโดปสารเจือปนปานกลาง (Moderately Doped: ≈ 10¹⁵ - 10¹⁷ atoms/cm³) โดปสารน้อยกว่า Emitter เพื่อให้สามารถทนแรงดันไบอัสย้อนกลับ (Reverse Bias) ได้สูงขึ้น โดยไม่เกิดการพังทลาย (Breakdown) ง่ายเกินไป\nBase (ขาเบส): มีความเข้มข้นของการโดปสารมลทินเบาบางที่สุด (Lightly Doped: ≈ 10¹³ - 10¹⁵ atoms/cm³) เพื่อลดโอกาสการรวมตัวกัน (Recombination) ของพาหะขณะเคลื่อนที่ผ่านชั้นเบส ส่งผลให้พาหะส่วนใหญ่ข้ามไปถึง Collector ได้เกือบทั้งหมด (I_C ≈ I_E)",
  },
  difficulty: DIFFICULTY.EASY,
  tags: ["วิชาเอกไฟฟ้า 2569", "ดิจิทัล", "อิเล็กทรอนิกส์"],
@@ -587,7 +587,7 @@ export const questions: Question[] = [
  subjectId: SUBJECT_IDS.DigitalElec01,
  topicId: TOPIC_IDS.EDDigitalElectonic01,
  order: 27,
- question: "เหตุใดขาคอลเลกเตอร์ (Collector) ของทรานซิสเตอร์ BJT จึงต้องโดปสารมลทินให้เบาบางกว่าขาเอมิตเตอร์ (Emitter) แม้ว่าขาคอลเลกเตอร์จะมีพื้นที่ทางกายภาพกว้างที่สุดก็ตาม",
+ question: "เหตุใดขาคอลเลกเตอร์ (Collector) ของทรานซิสเตอร์ BJT จึงต้องโดปสารเจือปนให้เบาบางกว่าขาเอมิตเตอร์ (Emitter) แม้ว่าขาคอลเลกเตอร์จะมีพื้นที่ทางกายภาพกว้างที่สุดก็ตาม",
  choices: [
  { id: CHOICE_IDS.A, text: "เพื่อลดการสูญเสียกำลังไฟฟ้าเนื่องจากความร้อนสะสมที่ขั้วคอลเลกเตอร์" },
  { id: CHOICE_IDS.B, text: "เพื่อให้กระแสเบส (I_B) มีค่าสูงกว่ากระแสคอลเลกเตอร์ (I_C) ในสภาวะไบอัสตรง" },
