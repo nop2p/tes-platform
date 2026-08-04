@@ -81,4 +81,16 @@ export const topics: Topic[] = [
   isActive: true,
 },
 
+{
+  id: TOPIC_IDS.EDDigitalElectonic01,
+  subjectId: SUBJECT_IDS.DigitalElec01,
+  code: "EDU01",
+  name: "วิชาเอกไฟฟ้า ดิจิทัล อิเล็กทรอนิกส์",
+  order: 1,
+  isActive: true,
+},
+
 ];
+
+
+

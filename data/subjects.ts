@@ -85,4 +85,21 @@ export const subjects: Subject[] = [
     },
     isActive: true,
   },
+  
+       {
+    id: SUBJECT_IDS.DigitalElec01,
+    code: "006",
+    name: "วิชาเอกไฟฟ้า ดิจิทัล อิเล็กทรอนิกส #1",
+    description: "ข้อสอบครูผู้ช่วย",
+
+    examConfig: {
+      subjectId: SUBJECT_IDS.DigitalElec01,
+      totalQuestions: 0,
+      durationMinutes: 60,
+    },
+    isActive: true,
+  }, 
+  
+  
+  
 ];
