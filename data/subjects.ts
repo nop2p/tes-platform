@@ -100,6 +100,19 @@ export const subjects: Subject[] = [
     isActive: true,
   }, 
   
+        {
+    id: SUBJECT_IDS.EDUQUALITY01,
+    code: "007",
+    name: "การประกันคุณภาพการศึกษา #1",
+    description: "ข้อสอบครูผู้ช่วย",
+
+    examConfig: {
+      subjectId: SUBJECT_IDS.EDUQUALITY01,
+      totalQuestions: 0,
+      durationMinutes: 60,
+    },
+    isActive: true,
+  },
   
   
 ];

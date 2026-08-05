@@ -84,6 +84,15 @@ export const topics: Topic[] = [
 {
   id: TOPIC_IDS.EDDigitalElectonic01,
   subjectId: SUBJECT_IDS.DigitalElec01,
+  code: "EQA-08-000001",
+  name: "การประกันคุณภาพการศึกษา #1",
+  order: 1,
+  isActive: true,
+},
+
+{
+  id: TOPIC_IDS.ASSSURANCE01,
+  subjectId: SUBJECT_IDS.EDUQUALITY01,
   code: "EDU01",
   name: "วิชาเอกไฟฟ้า ดิจิทัล อิเล็กทรอนิกส์",
   order: 1,
