@@ -828,7 +828,7 @@ function handleSelectQuestion(
               disabled={
                 !hasPreviousQuestion
               }
-              className="rounded-xl border border-slate-300 bg-white px-5 py-3 font-medium text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400"
+              className="rounded-xl border border-blue-600 bg-blue-600 px-5 py-3 font-medium text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-md disabled:cursor-not-allowed disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:opacity-100 disabled:shadow-none"
             >
               ← ข้อก่อนหน้า
             </button>
@@ -841,7 +841,7 @@ function handleSelectQuestion(
               disabled={
                 !hasNextQuestion
               }
-              className="rounded-xl bg-blue-600 px-5 py-3 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-300"
+              className="rounded-xl border border-blue-600 bg-blue-600 px-5 py-3 font-medium text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-md disabled:cursor-not-allowed disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:opacity-100 disabled:shadow-none"
             >
               ข้อถัดไป →
             </button>

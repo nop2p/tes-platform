@@ -480,9 +480,9 @@ useEffect(() => {
 
             {/* Previous */}
             <Button
-              variant="secondary"
               onClick={handlePreviousQuestion}
               disabled={!hasPreviousQuestion}
+              className="shadow-sm transition-all enabled:hover:-translate-y-0.5 enabled:hover:shadow-md disabled:border disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:opacity-100 disabled:shadow-none"
             >
               ← ข้อก่อนหน้า
             </Button>
@@ -510,9 +510,9 @@ useEffect(() => {
               </Button>
             ) : (
               <Button
-                variant="secondary"
                 onClick={handleNextQuestion}
                 disabled={!hasNextQuestion}
+                className="shadow-sm transition-all enabled:hover:-translate-y-0.5 enabled:hover:shadow-md disabled:border disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:opacity-100 disabled:shadow-none"
               >
                 ข้อถัดไป →
               </Button>
