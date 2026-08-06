@@ -99,6 +99,15 @@ export const topics: Topic[] = [
   isActive: true,
 },
 
+{
+  id: TOPIC_IDS.ThaiElectricalCode2021,
+  subjectId: SUBJECT_IDS.EITStandard2021,
+  code: "EDU01",
+  name: "มาตรฐานการติดตั้งไฟฟ้าสำหรับประเทศไทย 2564",
+  order: 1,
+  isActive: true,
+},
+
 ];
 
 

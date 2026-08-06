@@ -8,6 +8,7 @@ EDUCTIONS01:"ED-education001",
 VOCATIONNAL01:"ED-vocation001",
 DigitalElec01:"ED-digitalElec001",
 EDUQUALITY01:"Ed-eduquality001",
+EITStandard2021: "eit-standard-2021",
 } as const;
 
 export const TOPIC_IDS = {
@@ -22,6 +23,7 @@ export const TOPIC_IDS = {
    EDVocational01:"edvocation001-01",
  EDDigitalElectonic01:"eddigitalElec-01",
  ASSSURANCE01:"assurance001",
+ ThaiElectricalCode2021: "thai-electrical-code-2021",
 } as const;
 
 export const QUESTION_STATUS = {

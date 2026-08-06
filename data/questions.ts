@@ -6,6 +6,7 @@ import { questions as question05 } from "./question05";
 import { questions as question06 } from "./question06";
 import { questions as question07 } from "./question07";
 import { questions as question08 } from "./question08";
+import { questions as question09 } from "./question09";
 import type { Question } from "@/types";
 
 /**
@@ -23,4 +24,5 @@ export const questions = [
 ...question06,
 ...question07,
 ...question08,
+...question09,
 ] satisfies Question[];

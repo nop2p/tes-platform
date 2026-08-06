@@ -114,5 +114,18 @@ export const subjects: Subject[] = [
     isActive: true,
   },
   
+   {
+    id: SUBJECT_IDS.EITStandard2021,
+    code: "008",
+    name: "มาตรฐานการติดตั้งไฟฟ้าสำหรับประเทศไทย 2564 #1",
+    description: "ข้อสอบครูผู้ช่วย",
+
+    examConfig: {
+      subjectId: SUBJECT_IDS.EITStandard2021,
+      totalQuestions: 0,
+      durationMinutes: 90,
+    },
+    isActive: true,
+  },
   
 ];
