@@ -460,6 +460,8 @@ export function completeExamSession(
     status: "completed",
 
     completedAt: new Date().toISOString(),
+
+    completionReason: "completed",
   };
 }
 /**
@@ -481,5 +483,7 @@ export function expireExamSession(
     status: "completed",
 
     completedAt: new Date().toISOString(),
+
+    completionReason: "expired",
   };
 }

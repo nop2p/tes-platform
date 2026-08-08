@@ -27,8 +27,17 @@ export function Header() {
             </div>
           </Link>
 
-          <div className="text-sm text-slate-500">
-            Prototype v2
+          <div className="flex items-center gap-4 text-sm">
+            <Link
+              href="/admin"
+              className="font-medium text-blue-600 transition hover:text-blue-700"
+            >
+              ผู้ดูแล
+            </Link>
+
+            <span className="hidden text-slate-500 sm:inline">
+              Prototype v2
+            </span>
           </div>
         </div>
       </Container>

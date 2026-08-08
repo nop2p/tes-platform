@@ -9,3 +9,4 @@ export * from "./session-resume";
 export * from "./session-context-validator";
 
 export * from "./timer";
+export * from "./attempt-log-storage";

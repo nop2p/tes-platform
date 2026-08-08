@@ -19,7 +19,10 @@ import {
   Container,
 } from "@/components/ui";
 
+import { topics } from "@/data";
+
 import {
+  analyzeExamResult,
   areAllAnswersConfirmed,
   canGoNext,
   canGoPrevious,
@@ -34,6 +37,7 @@ import {
   goToNextQuestion,
   goToPreviousQuestion,
   loadExamSession,
+  recordExamAttempt,
   saveExamSession,
   selectAnswer,
 } from "@/lib/exam";
@@ -118,7 +122,7 @@ const isFinishingRef =
       if (restoredTimerState.isExpired) {
         const expiredSession =
           expireExamSession(savedSession);
-        finishSession(expiredSession);
+        void finishSession(expiredSession);
         return;
       }
 
@@ -187,7 +191,7 @@ useEffect(() => {
 
     if (timerState.isExpired) {
       const expiredSession = expireExamSession(currentSession);
-      finishSession(expiredSession);
+      void finishSession(expiredSession);
       return;
     }
 
@@ -357,9 +361,9 @@ useEffect(() => {
    * 4. Save completed session
    * 5. Navigate ไป /result
    */
-  function finishSession(
+  async function finishSession(
     nextSession: ExamSession,
-  ) {
+  ): Promise<void> {
     if (isFinishingRef.current) {
       return;
     }
@@ -367,6 +371,15 @@ useEffect(() => {
     isFinishingRef.current = true;
 
     saveExamSession(nextSession);
+    await recordExamAttempt(
+      nextSession,
+      subject,
+      analyzeExamResult(
+        nextSession,
+        questions,
+        topics,
+      ),
+    );
     setSession(nextSession);
     router.push("/result");
   }
@@ -403,7 +416,7 @@ useEffect(() => {
       * ใช้ Completion Boundary ร่วมกับ
       * Auto Expire และ Resume Expire
      */
-    finishSession(completedSession);
+    void finishSession(completedSession);
 }
 
   return (

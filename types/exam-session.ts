@@ -5,6 +5,11 @@ export type ExamSessionStatus =
   | "in-progress"
   | "completed";
 
+/** เหตุผลที่ Session สิ้นสุดลง */
+export type ExamSessionCompletionReason =
+  | "completed"
+  | "expired";
+
 /**
  * คำตอบของผู้สอบในแต่ละข้อ
  */
@@ -104,4 +109,10 @@ export interface ExamSession {
    * เวลาส่งข้อสอบ
    */
   completedAt?: string;
+
+  /**
+   * completed = ผู้สอบยืนยันคำตอบครบและกดจบแบบทดสอบ
+   * expired = เวลาสอบหมดก่อนจบแบบทดสอบ
+   */
+  completionReason?: ExamSessionCompletionReason;
 }

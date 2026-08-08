@@ -1,0 +1,34 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // ผู้ดูแลคือผู้ใช้ที่มีเอกสาร /admins/{uid} อยู่ใน Firestore
+    function isAdmin() {
+      return signedIn() &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    match /examAttempts/{attemptId} {
+      // ผู้เข้าสอบต้องเป็น Anonymous Auth user และเขียนได้เฉพาะ Log ของตนเอง
+      allow create: if signedIn() &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.sessionId == attemptId;
+
+      // มีสิทธิ์อ่าน Log รวมเฉพาะผู้ดูแล
+      allow get, list: if isAdmin();
+
+      // ไม่อนุญาตให้ผู้ใช้แก้ไขหรือลบผลสอบที่บันทึกแล้ว
+      allow update, delete: if false;
+    }
+
+    match /admins/{userId} {
+      // ใช้ตรวจสิทธิ์ของผู้ที่เพิ่ง Login เท่านั้น
+      allow get: if signedIn() && request.auth.uid == userId;
+      allow list, create, update, delete: if false;
+    }
+  }
+}
